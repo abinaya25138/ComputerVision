@@ -1,20 +1,20 @@
-import cv2 
-# open the video file 
-cap = cv2.VideoCapture('video.mp4') 
-# loop through frames in the video 
-while cap.isOpened(): 
-# read a frame 
-ret, frame = cap.read() 
-# check if the frame was successfully read 
-if ret: 
-# display the frame on the screen 
-cv2.imshow('Video', frame) 
-# wait for a key press for 25 milliseconds 
-if cv2.waitKey(25) & 0xFF == ord('q'):
-    break 
-else:
-    break 
-# release the video capture object and close all windows 
-cap.release() 
-cv2.destroyAllWindows()
+"""
+Minimal video playback utility.
 
+Requires: video.mp4 in the working directory.
+"""
+import cv2
+
+cap = cv2.VideoCapture("video.mp4")
+
+while cap.isOpened():
+    ret, frame = cap.read()
+    if not ret:
+        break
+
+    cv2.imshow("Video", frame)
+    if cv2.waitKey(25) & 0xFF == ord("q"):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
