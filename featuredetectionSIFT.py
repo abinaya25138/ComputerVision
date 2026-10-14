@@ -1,5 +1,10 @@
+"""
+Matches SIFT keypoints between two images using a brute-force matcher.
 
-
+Requires: book.jpg, table.jpg in the working directory, and
+opencv-contrib-python installed (SIFT via xfeatures2d needs the contrib
+build).
+"""
 import cv2
 
 # read the images
