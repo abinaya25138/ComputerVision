@@ -1,20 +1,19 @@
 """
 Matches SIFT keypoints between two images using a brute-force matcher.
 
-Requires: book.jpg, table.jpg in the working directory, and
-opencv-contrib-python installed (SIFT via xfeatures2d needs the contrib
-build).
+Requires: book.jpg, table.jpg in the working directory. SIFT is part of
+the main OpenCV module since 4.4 - just opencv-python is enough.
 """
 import cv2
 
 # read the images
-img1 = cv2.imread('book.jpg')  
+img1 = cv2.imread('book.jpg')
 img2 = cv2.imread('table.jpg')
 # convert images to grayscale
 img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
 img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
 # create SIFT object
-sift = cv2.xfeatures2d.SIFT_create()
+sift = cv2.SIFT_create()
 # detect SIFT features in both images
 keypoints_1, descriptors_1 = sift.detectAndCompute(img1,None)
 keypoints_2, descriptors_2 = sift.detectAndCompute(img2,None)

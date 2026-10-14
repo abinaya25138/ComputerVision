@@ -40,4 +40,4 @@ Face detection uses OpenCV's bundled Haar cascade (`cv2.data.haarcascades`), so 
 
 ## Tech stack
 
-Python, OpenCV (`opencv-python` + `opencv-contrib-python` for SIFT), NumPy, Matplotlib
+Python, OpenCV (`opencv-python`), NumPy, Matplotlib
